@@ -1,6 +1,5 @@
--- SHARK X HUB NO 1 | https://www.youtube.com/channel/UCX--xBqSg1IdzLkaqmLTorA
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx = library.new("Shark X Hub | No 1", 5013109572)
+local venyx = library.new("Kemo Kub", 5013109572)
 
 
 local page = venyx:addPage("Test", 5012544693)
