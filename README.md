@@ -1,9 +1,10 @@
+-- SHARK X HUB NO 1 | https://www.youtube.com/channel/UCX--xBqSg1IdzLkaqmLTorA
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx = library.new("Kemo Hub ", 5013109572)
+local venyx = library.new("Shark X Hub | No 1", 5013109572)
 
 
-local page = venyx:addPage("MAIN", 5012544693)
-local section1 = page:addSection("MAIN")
+local page = venyx:addPage("Test", 5012544693)
+local section1 = page:addSection("Section 1")
 local theme = venyx:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
 
@@ -12,9 +13,6 @@ section1:addToggle("Fast Attack", _G.FastAttack, function(value)
 _G.FastAttack = value
 end)
 
-section1:addToggle("Auto Farm", _G.AutoFarm_Level, function(value)
-    _G.AutoFarm_Level = value
-    end)
 
 local themes = {
 Background = Color3.fromRGB(24, 24, 24),
@@ -39,67 +37,16 @@ venyx:SelectPage(venyx.pages[1], true)
 
 
 
-spawn(function()
-   game:GetService("RunService").RenderStepped:Connect(function()
-    pcall(function()
-        if _G.FastAttack then
-            local Combat = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
-            local Cemara = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
-            Cemara.CameraShakeInstance.CameraShakeState = {FadingIn = 3, FadingOut = 2, Sustained = 0, Inactive = 1}
-            Combat.activeController.timeToNextAttack = 0
-            Combat.activeController.hitboxMagnitude = 120
-            Combat.activeController.increment = 3
-        end
-    end)
-end) 
-end)
-
-
-spawn(function()
-   game:GetService("RunService").RenderStepped:Connect(function()
-    pcall(function()
-        if _G.FastAttack then
-            game:GetService'VirtualUser':CaptureController()
-            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-        end
-    end)
-end) 
-end)
 
 
 
 
+_G.AutoFarm_Level = true
+_G.FastAttack = true
 
 
 
 
-
-spawn(function()
-    game:GetService("RunService").RenderStepped:Connect(function()
-     pcall(function()
-         if _G.FastAttack and _G.AutoFarm_Level then
-             local Combat = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
-             local Cemara = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
-             Cemara.CameraShakeInstance.CameraShakeState = {FadingIn = 3, FadingOut = 2, Sustained = 0, Inactive = 1}
-             Combat.activeController.timeToNextAttack = 0
-             Combat.activeController.hitboxMagnitude = 120
-             Combat.activeController.increment = 3
-         end
-     end)
- end) 
- end)
- 
- 
- spawn(function()
-    game:GetService("RunService").RenderStepped:Connect(function()
-     pcall(function()
-         if _G.AutoFarm_Level then
-             game:GetService'VirtualUser':CaptureController()
-             game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-         end
-     end)
- end) 
- end)
 
 
 
@@ -210,4 +157,42 @@ spawn(function()
 end)
 
 
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+     pcall(function()
+         if _G.AutoFarm_Level then
+             game:GetService'VirtualUser':CaptureController()
+             game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+         end
+     end)
+ end) 
+ end)
 
+
+
+spawn(function()
+   game:GetService("RunService").RenderStepped:Connect(function()
+    pcall(function()
+        if _G.FastAttack and _G.AutoFarm_Level then
+            local Combat = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+            local Cemara = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
+            Cemara.CameraShakeInstance.CameraShakeState = {FadingIn = 3, FadingOut = 2, Sustained = 0, Inactive = 1}
+            Combat.activeController.timeToNextAttack = 0
+            Combat.activeController.hitboxMagnitude = 120
+            Combat.activeController.increment = 3
+        end
+    end)
+end) 
+end)
+
+
+spawn(function()
+   game:GetService("RunService").RenderStepped:Connect(function()
+    pcall(function()
+        if _G.AutoFarm_Level then
+            game:GetService'VirtualUser':CaptureController()
+            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+        end
+    end)
+end) 
+end)
