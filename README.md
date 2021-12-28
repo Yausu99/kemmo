@@ -1,9 +1,9 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx = library.new("Shark X Hub | No 1", 5013109572)
+local venyx = library.new("Kemo Hub ", 5013109572)
 
 
-local page = venyx:addPage("Test", 5012544693)
-local section1 = page:addSection("Section 1")
+local page = venyx:addPage("MAIN", 5012544693)
+local section1 = page:addSection("MAIN")
 local theme = venyx:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
 
@@ -73,6 +73,7 @@ end)
 
 
 
+
 spawn(function()
     game:GetService("RunService").RenderStepped:Connect(function()
      pcall(function()
@@ -99,6 +100,7 @@ spawn(function()
      end)
  end) 
  end)
+
 
 
 
