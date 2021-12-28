@@ -9,8 +9,8 @@ local theme = venyx:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
 
 
-section1:addToggle("Fast Attack", _G.FastAttack, function(value)
-_G.FastAttack = value
+section1:addToggle("AutoFarm_Level", _G.AutoFarm_Level, function(value)
+_G.AutoFarm_Level = value
 end)
 
 
@@ -155,18 +155,6 @@ spawn(function()
         end
     end
 end)
-
-
-spawn(function()
-    game:GetService("RunService").RenderStepped:Connect(function()
-     pcall(function()
-         if _G.AutoFarm_Level then
-             game:GetService'VirtualUser':CaptureController()
-             game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-         end
-     end)
- end) 
- end)
 
 
 
